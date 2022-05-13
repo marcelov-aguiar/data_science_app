@@ -1,6 +1,4 @@
-from operator import length_hint
 import streamlit as st
-import numpy as np
 import pandas as pd
 import sys
 import os
@@ -84,4 +82,3 @@ def app():
                 os.remove(os.path.join(path_output, 'main_data_change.csv'))
         else:
             st.warning('Select the file before uploading it')
-    

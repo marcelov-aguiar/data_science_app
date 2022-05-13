@@ -1,10 +1,6 @@
-from distutils.log import error
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
-import plotly.graph_objects as go
-import plotly.express as px
 import os
 import sys
 from utils import utils
@@ -76,16 +72,3 @@ def app():
 
             plt.legend()
             st.pyplot(fig)
-            # fig = go.Figure()
-# 
-            # fig.add_trace(go.Scatter(x=df_data['data'],
-            #                          y=df_data['pred'],
-            #                          mode='markers',
-            #                          name=f'{y_var} Pred'))
-# 
-            # fig.add_trace(go.Scatter(x=df_data['data'],
-            #                          y=df_data[X_var],
-            #                          line=dict(color='firebrick'),
-            #                          name=f'{y_var} Real'))
-
-            

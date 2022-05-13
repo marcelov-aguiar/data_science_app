@@ -16,8 +16,7 @@ app = MultiPage()
 # Title of the main page
 display = Image.open(os.path.abspath(os.path.join(sys.path[0],'..' ,'img','uerj_logo.jpg')))
 display = np.array(display)
-# st.image(display, width = 400)
-# st.title("Data Storyteller Application")
+
 col1, col2 = st.columns(2)
 col1.image(display, width = 400)
 col2.title("Data Science Application")

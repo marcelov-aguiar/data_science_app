@@ -84,12 +84,7 @@ def app():
                               title=f'Graph of {column_name_sub}')
 
                 st.plotly_chart(fig, use_container_width=True)
-                #fig, ax = plt.subplots(figsize=(20,6))
-                #ax.set_title(f"Subplot: feature {column_name}", fontsize=20)
-                #ax.set_ylabel(column_name,fontsize=16)
-                #ax.set_xlabel('Date',fontsize=16)
-                #ax = data[column_name].plot()
-                #st.pyplot(fig)          
+        
             elif graph_type == 'boxplot':
                 fig = px.box(df_data, y=column_name_box, title=f'Graph of {column_name_box}')
                 st.plotly_chart(fig)
@@ -126,5 +121,3 @@ def app():
                                   x_vars=column_name_pair_x)
                 ax.fig.suptitle('Dispersion between variables',fontsize=20,y=1.1)
                 st.pyplot(ax)
-            #except Exception as e:
-            #    st.error(f"Error plotting graph.\n {e}")

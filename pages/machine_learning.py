@@ -7,7 +7,8 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_absolute_error, r2_score, mean_squared_error, mean_absolute_percentage_error
+from sklearn.metrics import mean_absolute_error, r2_score, mean_squared_error
+from sklearn.metrics import mean_absolute_percentage_error
 import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
 import numpy as np
@@ -73,6 +74,7 @@ def plot_scatter_performance(y_actual: np.array,
                 transform = ax.transAxes, fontsize=9)
     return fig
 
+
 def plot_coef(modelo: LinearRegression,
               columns_name: List[str]) -> Figure:
     """Reponsável por plotar um gráfico com o peso
@@ -106,13 +108,17 @@ def plot_coef(modelo: LinearRegression,
     
     return fig
 
+
 def plot_all(y_var: str,
              y_train: pd.Series,
              y_pred_train: pd.Series,
              X_test: pd.Series,
              y_test: pd.Series,
              pipeline: Pipeline):
-    """_summary_
+    """Responsáve por:
+    - Calcular as métricas de treino e teste.
+    - Plotar as métricas junto com o regplot do seaborn.
+    - Plotar os resíduos.
 
     Parameters
     ----------
@@ -123,7 +129,7 @@ def plot_all(y_var: str,
     y_pred_train : pd.Series
         Dados preditos da variável de treino.
     X_test : pd.Series
-        Dados de teste para predição.
+        Dados de entrada do teste para predição.
     y_test : pd.Series
         Dados de teste da variável predita.
     pipeline : Pipeline
@@ -176,6 +182,7 @@ def plot_all(y_var: str,
     sns.residplot(x=y_pred_test, y=y_test)
     st.pyplot(fig)
 
+
 def save_info_model(path_input: str,
                     X_var: List[str],
                     y_var: str,
@@ -219,6 +226,8 @@ def save_info_model(path_input: str,
                    meta_data)
      
     pickle.dump(pipeline, open(path_deploy, 'wb'))
+
+
 def app():
     """Reponsável por:
     - Perguntar ao usuário o nome da variável a ser preditida.
