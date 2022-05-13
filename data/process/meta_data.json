@@ -1,0 +1,11 @@
+{
+    "consumo": "int64",
+    "temp_media": "float64",
+    "data": "datetime64[ns]",
+    "training_column_name": [
+        "temp_max",
+        "fds",
+        "chuva"
+    ],
+    "y_column_name": "consumo"
+}
